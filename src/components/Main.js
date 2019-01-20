@@ -13,7 +13,6 @@ export default class Main extends React.Component {
           <div className="col-xs-12">
             <div
               className='button'
-              style={{ }}
               onClick={() => this.props.changeUserName('Anna')}
             >
               Change the userName
