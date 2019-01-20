@@ -5,7 +5,7 @@ import './App.css';
 
 import { Main } from '../components/Main';
 import { User } from '../components/User';
-
+import { setName } from '../actions/userActions';
 
 class App extends Component {
 
@@ -28,10 +28,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     setName: (name) => {
-      dispatch({
-        type: 'SET_NAME',
-        payload: name,
-      })
+      dispatch(setName(name));
     }
   }
 }
