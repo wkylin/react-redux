@@ -11,8 +11,8 @@
 // Learn more about service workers: http://bit.ly/CRA-PWA
 // serviceWorker.unregister();
 
-import { createStore, combineReducers } from 'redux';
-
+import { createStore, combineReducers, applyMiddleware } from 'redux';
+import logger from 'redux-logger';
 
 const mathReducer = (state = {
   result: 1,
@@ -33,6 +33,8 @@ const mathReducer = (state = {
         lastValues: [...state.lastValues, action.payload]
       }
       break;
+    default:
+      state = {...state};
   }
 
   return state;
@@ -55,15 +57,26 @@ const userReducer = (state = {
         age: action.payload
       }
       break;
+    default:
+      state = { ...state };
   }
 
   return state;
 }
 
-const store = createStore(combineReducers({mathReducer, userReducer}));
+const myLogger = (store) => (next) => (action) => {
+  console.log("Logged Action", action);
+  next(action);
+}
+
+const store = createStore(
+  combineReducers({mathReducer, userReducer}),
+  {},
+  applyMiddleware(myLogger, logger)
+);
 
 store.subscribe(() => {
-  console.log('Store update', store.getState());
+  // console.log('Store update', store.getState());
 })
 
 store.dispatch({
