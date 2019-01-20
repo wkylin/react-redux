@@ -1,7 +1,7 @@
 import React from 'react';
 
-export const User =(props) => {
-  return(
+export const User = (props) => {
+  return (
     <div>
       <div className='row'>
         <div className='col-xs-12'>
@@ -10,7 +10,7 @@ export const User =(props) => {
       </div>
       <div className='row'>
         <div className="col-xs-12">
-          <p> User Name: { props.userName }</p>
+          <p> User Name: {props.userName}</p>
         </div>
       </div>
     </div>

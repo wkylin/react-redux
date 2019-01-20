@@ -11,7 +11,9 @@ export function setName(name) {
   return {
     type: 'SET_NAME',
     payload: new Promise((resolve, reject) => {
-      setTimeout(() => {resolve(name)}, 2000);
+      setTimeout(() => {
+        resolve(name)
+      }, 2000);
     })
   }
 }

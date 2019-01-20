@@ -13,8 +13,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Main changeUserName={() =>  this.props.setName('Anna2') }/>
-        <User userName= {this.props.user.name}/>
+        <Main changeUserName={() => this.props.setName('Anna2')}/>
+        <User userName={this.props.user.name}/>
       </div>
     );
   }

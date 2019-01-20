@@ -1,4 +1,3 @@
-
 const mathReducer = (state = {
   result: 1,
   lastValues: [],
