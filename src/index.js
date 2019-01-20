@@ -64,15 +64,15 @@ const userReducer = (state = {
   return state;
 }
 
-const myLogger = (store) => (next) => (action) => {
-  console.log("Logged Action", action);
-  next(action);
-}
+// const myLogger = (store) => (next) => (action) => {
+//   console.log("Logged Action", action);
+//   next(action);
+// }
 
 const store = createStore(
   combineReducers({mathReducer, userReducer}),
   {},
-  applyMiddleware(myLogger, logger)
+  applyMiddleware(logger)
 );
 
 store.subscribe(() => {
