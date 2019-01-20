@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-
 import { connect } from 'react-redux';
 
 import './App.css';
 
-import Main from './Main';
-import User from './User'
+import { Main } from '../components/Main';
+import { User } from '../components/User';
 
 
 class App extends Component {
